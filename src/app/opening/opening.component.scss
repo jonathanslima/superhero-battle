@@ -1,0 +1,36 @@
+.opening{
+  background: rgb(153,225,217);
+  background: radial-gradient(circle, rgba(153,225,217,1) 0%, rgba(92,199,178,1) 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  flex-direction: column;
+
+  .progress{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 40%;
+  }
+
+  .text{
+    font-size: 12px;
+    color: #468189;
+
+    a{
+      color: #468189;
+      text-decoration: underline;
+    }
+  }
+}
+
+.opening-out{
+  animation: screenOut 1500ms forwards;
+}
+
+@keyframes screenOut{
+  from { top: 0 }
+  to { top: -800px }
+}
