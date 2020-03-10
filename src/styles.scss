@@ -1,2 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-@import '../node_modules/bootstrap/scss/bootstrap.scss'
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+body{
+  background: rgb(92,199,178);
+  background: radial-gradient(circle, rgba(92,199,178,1) 0%, rgba(70,129,137,1) 50%);
+}
+
+.logo{
+  h1{
+    color: #468189;
+    font-family: "Spartan";
+  }
+}

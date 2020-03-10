@@ -1,0 +1,35 @@
+.box-message{
+  position: absolute;
+  left: 0;
+  z-index: 5;
+  color: red;
+  top: 45%;
+  font-size: 44px;
+  font-family: "Bilbo";
+  font-weight: 700;
+  animation: msgStays 5s forwards;
+  animation: msgAppear 7s forwards;
+}
+
+@keyframes msgAppear{
+  from { left: -1000px; }
+  30% { left: 35%; opacity: 1; }
+  51%{ left: 35%; }
+  75%{ opacity: 0; }
+  to { opacity: 0; left: -1000px }
+}
+
+@keyframes msgStays{
+  from { left: -1000px; }
+  20% { left: 45%; }
+  30% { left: 35%; }
+  70% { left: 35%; opacity: 1; }
+  to { left: 70%; opacity: 0;}
+}
+
+@media(min-width: 992px){
+  .box-message{
+    width: 30%;
+    left: -1000px;
+  }
+}
