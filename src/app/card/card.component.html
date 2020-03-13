@@ -1,120 +1,115 @@
-<div class="player-info">
-  <div class="score">0</div>
-  <div class="player-name">Player 01 or 02</div>
+<div class="battle-component">
+  <div class="player-info" *ngFor="let hero of players; let i = index">
+    <!-- <div class="score">0</div>
+    <div class="player-name">Player 01 or 02</div> -->
 
-  <section
-    class="superhero-info card"
-    style="background-image: url('https://www.superherodb.com/pictures2/portraits/10/100/1284.jpg')"
-  >
-    <header class="header-card">
-      <div class="life-hero"></div>
-      <div class="hero-name text-center">
-        <span class="attack"><img src="../../assets/img/attack.png" alt=""> <span>1000</span></span>
-        <h1 class="name">Goku</h1>
-        <span class="defense"><img src="../../assets/img/defense.png" alt=""> <span>1000</span></span>
-      </div>
-    </header>
+    <section
+      (click)="getHeros()"
+      class="superhero-info card"
+      [ngStyle]="{ 'background-image': 'url(' + hero.image.url + ')'}"
+    >
+      <header class="header-card">
+        <div class="life-hero" [ngStyle]="{'width': hero.powerstats.lifePct + '%'}"></div>
+        <div class="hero-name text-center">
+          <span class="attack"><img src="../../assets/img/attack.png" alt=""> <span>1000</span></span>
+          <h1 class="name">{{hero.name}}</h1>
+          <span class="defense"><img src="../../assets/img/defense.png" alt=""> <span>1000</span></span>
+        </div>
+      </header>
 
-    <div class="attributes">
-      <div class="line">
-        <small>Intelligence</small>
-        <div class="progress">
-          <div
-            class="progress-bar"
-            role="progressbar"
-            style="width: 56%"
-            aria-valuenow="56"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            56%
+      <div class="attributes">
+        <div class="line">
+          <small>Intelligence</small>
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              [ngStyle]="{'width': + (hero.powerstats.intelligence == 'null') ? '50%' : hero.powerstats.intelligence + '%'}"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              {{ (hero.powerstats.intelligence == 'null') ? 50 : hero.powerstats.intelligence }}%
+            </div>
+          </div>
+        </div>
+
+        <div class="line">
+          <small>Speed</small>
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              [ngStyle]="{'width': + (hero.powerstats.speed == 'null') ? '50%' : hero.powerstats.speed + '%'}"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              {{ (hero.powerstats.speed == 'null') ? 50 : hero.powerstats.speed }}%
+            </div>
+          </div>
+        </div>
+
+        <div class="line">
+          <small>Strength</small>
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              [ngStyle]="{'width': + (hero.powerstats.strength == 'null') ? '50%' : hero.powerstats.strength + '%'}"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              {{ (hero.powerstats.strength == 'null') ? 50 : hero.powerstats.strength }}%
+            </div>
+          </div>
+        </div>
+
+        <div class="line">
+          <small>Durability</small>
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              [ngStyle]="{'width': + (hero.powerstats.durability == 'null') ? '50%' : hero.powerstats.durability + '%'}"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+            {{ (hero.powerstats.durability == 'null') ? 50 : hero.powerstats.durability }}%
+            </div>
+          </div>
+        </div>
+
+        <div class="line">
+          <small>Power</small>
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              [ngStyle]="{'width': + (hero.powerstats.durability == 'null') ? '50%' : hero.powerstats.durability + '%'}"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              {{ (hero.powerstats.power == 'null') ? 50 : hero.powerstats.power }}%
+            </div>
+          </div>
+        </div>
+
+        <div class="line">
+          <small>Combat</small>
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              [ngStyle]="{'width': + (hero.powerstats.combat == 'null') ? '50%' : hero.powerstats.combat + '%'}"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              {{ (hero.powerstats.combat == 'null') ? 50 : hero.powerstats.combat }}%
+            </div>
           </div>
         </div>
       </div>
+    </section>
+  </div>
 
-      <div class="line">
-        <small>Speed</small>
-        <div class="progress">
-          <div
-            class="progress-bar"
-            role="progressbar"
-            style="width: 75%"
-            aria-valuenow="75"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            75%
-          </div>
-        </div>
-      </div>
-
-      <div class="line">
-        <small>Strength</small>
-        <div class="progress">
-          <div
-            class="progress-bar"
-            role="progressbar"
-            style="width: 100%"
-            aria-valuenow="100"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            100%
-          </div>
-        </div>
-      </div>
-
-      <div class="line">
-        <small>Durability</small>
-        <div class="progress">
-          <div
-            class="progress-bar"
-            role="progressbar"
-            style="width: 90%"
-            aria-valuenow="90"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            90%
-          </div>
-        </div>
-      </div>
-
-      <div class="line">
-        <small>Power</small>
-        <div class="progress">
-          <div
-            class="progress-bar"
-            role="progressbar"
-            style="width: 100%"
-            aria-valuenow="100"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            100%
-          </div>
-        </div>
-      </div>
-
-      <div class="line">
-        <small>Combat</small>
-        <div class="progress">
-          <div
-            class="progress-bar"
-            role="progressbar"
-            style="width: 100%"
-            aria-valuenow="100"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            100%
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="life">
-      <span></span>
-    </div>
-  </section>
+  <app-battle-box></app-battle-box>
 </div>

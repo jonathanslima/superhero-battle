@@ -5,6 +5,18 @@
   font-weight: 700;
 }
 
+.battle-component{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .player-info{
+    &:first-child{ order: 1 }
+    .box-battle{ order: 2 }
+    &:last-child{ order: 3 }
+  }
+}
+
 .score {
   font-size: 24px;
 }
@@ -30,7 +42,6 @@
 
     .life-hero {
       position: absolute;
-      width: 50%;
       height: 100%;
       background-color: rgba(green, 0.8);
       // z-index: 1;
