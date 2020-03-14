@@ -1,7 +1,9 @@
 <div class="battle-component">
   <div class="player-info" *ngFor="let hero of players; let i = index">
-    <!-- <div class="score">0</div>
-    <div class="player-name">Player 01 or 02</div> -->
+    <div class="score">0</div>
+    <div class="player-name">Player 01 or 02</div>
+
+    <div class="card-bg" style="background: url('../assets/img/superhero.png');"></div>
 
     <section
       (click)="getHeros()"
@@ -84,7 +86,7 @@
             <div
               class="progress-bar"
               role="progressbar"
-              [ngStyle]="{'width': + (hero.powerstats.durability == 'null') ? '50%' : hero.powerstats.durability + '%'}"
+              [ngStyle]="{'width': + (hero.powerstats.power == 'null') ? '50%' : hero.powerstats.power + '%'}"
               aria-valuemin="0"
               aria-valuemax="100"
             >

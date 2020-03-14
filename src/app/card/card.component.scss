@@ -1,16 +1,30 @@
 .player-name,
-.score {
+.score,
+.card-bg {
   color: #fff;
   text-align: center;
   font-weight: 700;
+  backface-visibility: hidden;
+}
+
+.card-bg{
+  position: absolute;
+  z-index: 1;
 }
 
 .battle-component{
   display: flex;
   justify-content: space-around;
   align-items: center;
+  perspective: 1000px;
+
 
   .player-info{
+    position: relative;
+    transition: transform .4s;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+
     &:first-child{ order: 1 }
     .box-battle{ order: 2 }
     &:last-child{ order: 3 }
@@ -35,6 +49,8 @@
   margin-bottom: 30px;
   animation: hitted 3s infinite;
   animation: attacking 3s infinite;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
 
   .header-card {
     background-color: rgba(red, 0.5);

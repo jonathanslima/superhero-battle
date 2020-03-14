@@ -22,9 +22,14 @@ export class CardComponent implements OnInit {
     }
   }
 
+  battle(){
+    this.getHeros()
+  }
+
   getHeros() {
     let p1 = this.players[0].powerstats;
     let p2 = this.players[1].powerstats;
+    let el = <HTMLElement>document.querySelector('.box-message')
 
     // add life
     p1.life =
@@ -45,13 +50,15 @@ export class CardComponent implements OnInit {
         Number(p2.combat == "null" ? 50 : p2.combat)) *
       3;
 
-    let lifeImutableP1 = p1.life;
-    let lifeImutableP2 = p2.life;
+    let l1 = p1.life;
+    let l2 = p2.life;
 
-    p1.lifePct = this.checkLifeInPct(p1.life, lifeImutableP1);
-    p2.lifePct = this.checkLifeInPct(p2.life, lifeImutableP2);
+    p1.lifePct = this.checkLifeInPct(p1.life, l1);
+    p2.lifePct = this.checkLifeInPct(p2.life, l2);
 
     console.log(this.players);
+
+    el.classList.add('msg-appear')
   }
 
   ngOnInit() {}

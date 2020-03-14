@@ -7,9 +7,10 @@
   font-size: 44px;
   font-family: "Bilbo";
   font-weight: 700;
-  animation: msgStays 5s forwards;
-  animation: msgAppear 7s forwards;
 }
+
+.msg-stay{ animation: msgStays 5s forwards; }
+.msg-appear{ animation: msgAppear 7s forwards; }
 
 @keyframes msgAppear{
   from { left: -1000px; }

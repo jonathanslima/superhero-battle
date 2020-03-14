@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./battle-box.component.scss']
 })
 export class BattleBoxComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
