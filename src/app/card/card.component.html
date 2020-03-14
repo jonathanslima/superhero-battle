@@ -3,10 +3,9 @@
     <div class="score">0</div>
     <div class="player-name">Player 01 or 02</div>
 
-    <div class="card-bg" style="background: url('../assets/img/superhero.png');"></div>
+    <div class="card-bg" style="background-image: url('../assets/img/superhero.png');"></div>
 
     <section
-      (click)="getHeros()"
       class="superhero-info card"
       [ngStyle]="{ 'background-image': 'url(' + hero.image.url + ')'}"
     >

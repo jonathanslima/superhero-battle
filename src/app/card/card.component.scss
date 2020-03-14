@@ -1,15 +1,25 @@
 .player-name,
-.score,
-.card-bg {
+.score{
   color: #fff;
   text-align: center;
   font-weight: 700;
+  transform: rotateY(180deg);
   backface-visibility: hidden;
 }
 
 .card-bg{
+  backface-visibility: hidden;
   position: absolute;
   z-index: 1;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+}
+
+.rotate-card{
+  transform: rotateY(180deg) !important;
 }
 
 .battle-component{

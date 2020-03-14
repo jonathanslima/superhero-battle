@@ -22,11 +22,8 @@ export class CardComponent implements OnInit {
     }
   }
 
-  battle(){
-    this.getHeros()
-  }
-
   getHeros() {
+    console.log(this.players);
     let p1 = this.players[0].powerstats;
     let p2 = this.players[1].powerstats;
     let el = <HTMLElement>document.querySelector('.box-message')
@@ -59,6 +56,14 @@ export class CardComponent implements OnInit {
     console.log(this.players);
 
     el.classList.add('msg-appear')
+  }
+
+  battle(){
+    let el = [].slice.call(document.querySelectorAll('.player-info'));
+    el.map((i)=>{
+      i.classList.add('rotate-card')
+    })
+    this.getHeros()
   }
 
   ngOnInit() {}
