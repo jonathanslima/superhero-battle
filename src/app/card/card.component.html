@@ -6,15 +6,16 @@
     <div class="card-bg" style="background-image: url('../assets/img/superhero.png');"></div>
 
     <section
+      (click)="getHeroes()"
       class="superhero-info card"
       [ngStyle]="{ 'background-image': 'url(' + hero.image.url + ')'}"
     >
       <header class="header-card">
         <div class="life-hero" [ngStyle]="{'width': hero.powerstats.lifePct + '%'}"></div>
         <div class="hero-name text-center">
-          <span class="attack"><img src="../../assets/img/attack.png" alt=""> <span>1000</span></span>
+          <span class="attack"><img src="../../assets/img/attack.png" alt=""> <span>0</span></span>
           <h1 class="name">{{hero.name}}</h1>
-          <span class="defense"><img src="../../assets/img/defense.png" alt=""> <span>1000</span></span>
+          <span class="defense"><img src="../../assets/img/defense.png" alt=""> <span>0</span></span>
         </div>
       </header>
 

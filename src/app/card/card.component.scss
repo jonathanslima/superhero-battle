@@ -57,8 +57,7 @@
   background-position: center;
   border: none;
   margin-bottom: 30px;
-  animation: hitted 3s infinite;
-  animation: attacking 3s infinite;
+  animation: attacking 3.5s forwards;
   backface-visibility: hidden;
   transform: rotateY(180deg);
 
