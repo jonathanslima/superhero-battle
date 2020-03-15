@@ -7,12 +7,11 @@ import { CardComponent } from '../card/card.component';
   styleUrls: ['./button-action.component.scss']
 })
 export class ButtonActionComponent implements OnInit {
-  public card = new CardComponent();
-
   constructor() { }
 
-  battle(){
-    this.card.battle()
+  battleCards(){
+    let card = new CardComponent();
+    card.battle()
   }
 
   ngOnInit() {
