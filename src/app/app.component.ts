@@ -13,11 +13,15 @@ export class AppComponent implements OnInit{
 
   constructor(private retrieveData: retrieveData){}
 
-  ngOnInit() {
+  fillPlayers(){
     let p1Random = Math.floor(Math.random() * 731) + 1,
         p2Random = Math.floor(Math.random() * 731) + 1;
 
     this.retrieveData.getHeroInfo(p1Random).then(hero => { this.players.push(hero) })
     this.retrieveData.getHeroInfo(p2Random).then(hero => { this.players.push(hero) })
+  }
+
+  ngOnInit() {
+    this.fillPlayers()
   }
 }
