@@ -10,6 +10,7 @@
   flex-direction: column;
   left: 0;
   z-index: 10;
+  text-align: center;
 
   .progress{
     margin-top: 20px;
@@ -34,5 +35,5 @@
 
 @keyframes screenOut{
   from { top: 0 }
-  to { top: -800px }
+  to { top: -1200px }
 }
