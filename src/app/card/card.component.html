@@ -25,7 +25,7 @@
             <div
               class="progress-bar"
               role="progressbar"
-              [ngStyle]="{'width': + (hero.powerstats.intelligence == 'null') ? '50%' : hero.powerstats.intelligence + '%'}"
+              [ngStyle]="{'width': + (String(hero.powerstats.intelligence) == 'null') ? '50%' : String(hero.powerstats.intelligence) + '%'}"
               aria-valuemin="0"
               aria-valuemax="100"
             >
