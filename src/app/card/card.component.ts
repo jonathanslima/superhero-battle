@@ -12,7 +12,7 @@ export class CardComponent implements OnInit {
 
   constructor() {}
 
-  checkLifeInPct(int, alt): any {
+  checkLifeInPct(int, alt): number {
     let life = int,
       total = alt,
       pct;
@@ -24,22 +24,23 @@ export class CardComponent implements OnInit {
     }
   }
 
-  calcAttack(hero): any {
-    return (
+  calcAttack(hero): number {
+    let attack: number = (
       +( hero.powerstats.strength == "null" ? 50 : hero.powerstats.strength ) +
       +( hero.powerstats.power == "null" ? 50 : hero.powerstats.power ) +
       +( hero.powerstats.combat == "null" ? 50 : hero.powerstats.combat )
     );
+    return attack
   }
 
-  calcDefense(hero): any {
+  calcDefense(hero): number {
     return (
       +( hero.powerstats.intelligence == "null" ? 50 : hero.powerstats.intelligence ) +
       +( hero.powerstats.durability == "null" ? 50 : hero.powerstats.durability )
     );
   }
 
-  calcLife(player, pdefault, multiple): any {
+  calcLife(player, pdefault, multiple): number {
     return (
       (+(player.intelligence == "null" ? pdefault : player.intelligence) +
         +(player.strength == "null" ? pdefault : player.strength) +
