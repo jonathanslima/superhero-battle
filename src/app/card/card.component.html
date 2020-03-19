@@ -25,11 +25,11 @@
             <div
               class="progress-bar"
               role="progressbar"
-              [ngStyle]="{'width': + (String(hero.powerstats.intelligence) == 'null') ? '50%' : String(hero.powerstats.intelligence) + '%'}"
+              [ngStyle]="{'width': + hero.powerstats.intelligence + '%'}"
               aria-valuemin="0"
               aria-valuemax="100"
             >
-              {{ (hero.powerstats.intelligence == 'null') ? 50 : hero.powerstats.intelligence }}%
+              {{ hero.powerstats.intelligence }}%
             </div>
           </div>
         </div>
@@ -40,11 +40,11 @@
             <div
               class="progress-bar"
               role="progressbar"
-              [ngStyle]="{'width': + (hero.powerstats.speed == 'null') ? '50%' : hero.powerstats.speed + '%'}"
+              [ngStyle]="{'width': + hero.powerstats.speed + '%'}"
               aria-valuemin="0"
               aria-valuemax="100"
             >
-              {{ (hero.powerstats.speed == 'null') ? 50 : hero.powerstats.speed }}%
+              {{ hero.powerstats.speed }}%
             </div>
           </div>
         </div>
@@ -55,11 +55,11 @@
             <div
               class="progress-bar"
               role="progressbar"
-              [ngStyle]="{'width': + (hero.powerstats.strength == 'null') ? '50%' : hero.powerstats.strength + '%'}"
+              [ngStyle]="{'width': + hero.powerstats.strength + '%'}"
               aria-valuemin="0"
               aria-valuemax="100"
             >
-              {{ (hero.powerstats.strength == 'null') ? 50 : hero.powerstats.strength }}%
+              {{ hero.powerstats.strength }}%
             </div>
           </div>
         </div>
@@ -70,11 +70,11 @@
             <div
               class="progress-bar"
               role="progressbar"
-              [ngStyle]="{'width': + (hero.powerstats.durability == 'null') ? '50%' : hero.powerstats.durability + '%'}"
+              [ngStyle]="{'width': + hero.powerstats.durability + '%'}"
               aria-valuemin="0"
               aria-valuemax="100"
             >
-            {{ (hero.powerstats.durability == 'null') ? 50 : hero.powerstats.durability }}%
+            {{ hero.powerstats.durability }}%
             </div>
           </div>
         </div>
@@ -85,11 +85,11 @@
             <div
               class="progress-bar"
               role="progressbar"
-              [ngStyle]="{'width': + (hero.powerstats.power == 'null') ? '50%' : hero.powerstats.power + '%'}"
+              [ngStyle]="{'width': + hero.powerstats.power + '%'}"
               aria-valuemin="0"
               aria-valuemax="100"
             >
-              {{ (hero.powerstats.power == 'null') ? 50 : hero.powerstats.power }}%
+              {{ hero.powerstats.power }}%
             </div>
           </div>
         </div>
@@ -100,11 +100,11 @@
             <div
               class="progress-bar"
               role="progressbar"
-              [ngStyle]="{'width': + (hero.powerstats.combat == 'null') ? '50%' : hero.powerstats.combat + '%'}"
+              [ngStyle]="{'width': + hero.powerstats.combat + '%'}"
               aria-valuemin="0"
               aria-valuemax="100"
             >
-              {{ (hero.powerstats.combat == 'null') ? 50 : hero.powerstats.combat }}%
+              {{ hero.powerstats.combat }}%
             </div>
           </div>
         </div>

@@ -25,18 +25,25 @@ export class CardComponent implements OnInit {
   }
 
   calcAttack(hero): number {
-    let attack: number = (
-      +( hero.powerstats.strength == "null" ? 50 : hero.powerstats.strength ) +
-      +( hero.powerstats.power == "null" ? 50 : hero.powerstats.power ) +
-      +( hero.powerstats.combat == "null" ? 50 : hero.powerstats.combat )
+    hero.powerstats.strength = hero.powerstats.strength == "null" ? 50 : hero.powerstats.strength;
+    hero.powerstats.power = hero.powerstats.power == "null" ? 50 : hero.powerstats.power;
+    hero.powerstats.combat = hero.powerstats.combat == "null" ? 50 : hero.powerstats.combat;
+
+    return (
+      +( hero.powerstats.strength ) +
+      +( hero.powerstats.power ) +
+      +( hero.powerstats.combat )
     );
-    return attack
   }
 
   calcDefense(hero): number {
+    hero.powerstats.intelligence = hero.powerstats.intelligence == "null" ? 50 : hero.powerstats.intelligence;
+    hero.powerstats.durability = hero.powerstats.durability == "null" ? 50 : hero.powerstats.durability;
+    hero.powerstats.speed = hero.powerstats.speed == "null" ? 50 : hero.powerstats.speed;
+
     return (
-      +( hero.powerstats.intelligence == "null" ? 50 : hero.powerstats.intelligence ) +
-      +( hero.powerstats.durability == "null" ? 50 : hero.powerstats.durability )
+      +( hero.powerstats.intelligence ) +
+      +( hero.powerstats.durability )
     );
   }
 
