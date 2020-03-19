@@ -24,7 +24,7 @@ export class CardComponent implements OnInit {
     }
   }
 
-  calcAttack(hero) {
+  calcAttack(hero): number {
     return (
       Number( hero.powerstats.strength == "null" ? 50 : hero.powerstats.strength ) +
       Number( hero.powerstats.power == "null" ? 50 : hero.powerstats.power ) +
@@ -32,7 +32,7 @@ export class CardComponent implements OnInit {
     );
   }
 
-  calcDefense(hero) {
+  calcDefense(hero): number {
     return (
       Number( hero.powerstats.intelligence == "null" ? 50 : hero.powerstats.intelligence ) +
       Number( hero.powerstats.durability == "null" ? 50 : hero.powerstats.durability )
@@ -191,7 +191,7 @@ export class CardComponent implements OnInit {
     });
   }
 
-  toAttack(heroAttacking, heroDefending) {
+  toAttack(heroAttacking, heroDefending): void {
     let suppAtt: Array<any> = this.supportAttack();
     let suppDef: Array<any> = this.supportDefense();
 
@@ -232,7 +232,7 @@ export class CardComponent implements OnInit {
     );
   }
 
-  battle() {
+  battle(): void {
     let e = <HTMLElement>document.querySelector(".card");
     let el = [].slice.call(document.querySelectorAll(".player-info"));
 
