@@ -26,27 +26,27 @@ export class CardComponent implements OnInit {
 
   calcAttack(hero): number {
     return (
-      Number( hero.powerstats.strength == "null" ? 50 : hero.powerstats.strength ) +
-      Number( hero.powerstats.power == "null" ? 50 : hero.powerstats.power ) +
-      Number( hero.powerstats.combat == "null" ? 50 : hero.powerstats.combat )
+      +( hero.powerstats.strength == "null" ? 50 : hero.powerstats.strength ) +
+      +( hero.powerstats.power == "null" ? 50 : hero.powerstats.power ) +
+      +( hero.powerstats.combat == "null" ? 50 : hero.powerstats.combat )
     );
   }
 
   calcDefense(hero): number {
     return (
-      Number( hero.powerstats.intelligence == "null" ? 50 : hero.powerstats.intelligence ) +
-      Number( hero.powerstats.durability == "null" ? 50 : hero.powerstats.durability )
+      +( hero.powerstats.intelligence == "null" ? 50 : hero.powerstats.intelligence ) +
+      +( hero.powerstats.durability == "null" ? 50 : hero.powerstats.durability )
     );
   }
 
   calcLife(player, pdefault, multiple): number {
     return (
-      (Number(player.intelligence == "null" ? pdefault : player.intelligence) +
-        Number(player.strength == "null" ? pdefault : player.strength) +
-        Number(player.speed == "null" ? pdefault : player.speed) +
-        Number(player.durability == "null" ? pdefault : player.durability) +
-        Number(player.power == "null" ? pdefault : player.power) +
-        Number(player.combat == "null" ? pdefault : player.combat)) *
+      (+(player.intelligence == "null" ? pdefault : player.intelligence) +
+        +(player.strength == "null" ? pdefault : player.strength) +
+        +(player.speed == "null" ? pdefault : player.speed) +
+        +(player.durability == "null" ? pdefault : player.durability) +
+        +(player.power == "null" ? pdefault : player.power) +
+        +(player.combat == "null" ? pdefault : player.combat)) *
       multiple
     );
   }
