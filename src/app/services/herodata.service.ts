@@ -6,7 +6,7 @@ export class retrieveData {
   constructor(private http: HttpClient) {}
   private hash = 2803303013088158;
   // https://github.com/gr2m/CORS-Proxy
-  private urlBase = `https://superheroapi.com/api/${this.hash}`;
+  private urlBase = `https://cors-anywhere.herokuapp.com/https://superheroapi.com/api/${this.hash}`;
 
   // Title
   public getHeroInfo(id:number): Promise<any> {
